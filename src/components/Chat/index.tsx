@@ -121,8 +121,10 @@ const Chat = () => {
   );
 };
 
-export default () => (
+const wrapper = () => (
   <ApolloProvider client={client}>
     <Chat />
   </ApolloProvider>
 );
+
+export default wrapper;
