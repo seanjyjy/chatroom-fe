@@ -1,0 +1,29 @@
+.message-icon {
+  height: 50px;
+  width: 50px;
+  margin-right: 0.5em;
+  border-radius: 25;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.message-icon-avatar {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.message-name {
+  position: absolute;
+  top: 5px;
+  left: 12px;
+  font-size: 12px;
+}
+
+.message-textbox {
+  padding: 1.3em;
+  border-radius: 1em;
+  max-width: 60%;
+  min-width: 10%;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
