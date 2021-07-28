@@ -32,41 +32,40 @@ const Messages = ({ user }: MessagesProps) => {
   if (!data) {
     return null;
   }
+  const messages = data.messages.reverse();
   // small trick we apply column-reverse later
   return (
     <div style={{ width: "50%", paddingLeft: "20px" }}>
-      {data.messages
-        .reverse()
-        .map(({ id, user: messageUser, content, avatar }) => (
+      {messages.map(({ id, user: messageUser, content, avatar }) => (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: user === messageUser ? "flex-end" : "flex-start",
+            paddingBottom: "1em",
+          }}
+        >
+          {user !== messageUser && (
+            <div className="message-icon">
+              <Avatar
+                src={imagesList[avatar as avatarType]}
+                className="message-icon-avatar"
+              />
+            </div>
+          )}
           <div
+            className="message-textbox"
             style={{
-              display: "flex",
-              justifyContent: user === messageUser ? "flex-end" : "flex-start",
-              paddingBottom: "1em",
+              background: user === messageUser ? "#059999" : "white",
+              color: user === messageUser ? "white" : "#40444a",
             }}
           >
-            {user !== messageUser && (
-              <div className="message-icon">
-                <Avatar
-                  src={imagesList[avatar as avatarType]}
-                  className="message-icon-avatar"
-                />
-              </div>
-            )}
-            <div
-              className="message-textbox"
-              style={{
-                background: user === messageUser ? "#059999" : "white",
-                color: user === messageUser ? "white" : "#40444a",
-              }}
-            >
-              <span className="message-name">
-                {capitalizeFirstLetter(messageUser)}
-              </span>
-              <p style={{ transform: "translateY(5px)" }}>{content}</p>
-            </div>
+            <span className="message-name">
+              {capitalizeFirstLetter(messageUser)}
+            </span>
+            <p style={{ transform: "translateY(5px)" }}>{content}</p>
           </div>
-        ))}
+        </div>
+      ))}
     </div>
   );
 };
