@@ -32,7 +32,7 @@ const Messages = ({ user }: MessagesProps) => {
   if (!data) {
     return null;
   }
-  const messages = data.messages.reverse();
+  const messages = data.messages.slice(0).reverse();
   // small trick we apply column-reverse later
   return (
     <div style={{ width: "50%", paddingLeft: "20px" }}>
