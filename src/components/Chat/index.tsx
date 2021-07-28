@@ -18,7 +18,7 @@ import "./index.css";
 
 // creating a websocket link connected to the server which is localhost:4000
 const link = new WebSocketLink({
-  uri: "ws://serene-earth-24117.herokuapp.com/",
+  uri: "wss://serene-earth-24117.herokuapp.com/",
   options: {
     reconnect: true,
   },
