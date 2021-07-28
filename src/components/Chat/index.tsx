@@ -26,7 +26,7 @@ const link = new WebSocketLink({
 
 const client = new ApolloClient({
   link,
-  uri: "http://serene-earth-24117.herokuapp.com/",
+  uri: "https://serene-earth-24117.herokuapp.com/",
   cache: new InMemoryCache(),
 });
 
