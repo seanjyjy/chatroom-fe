@@ -38,7 +38,6 @@ const Messages = ({ user }: MessagesProps) => {
     <div style={{ width: "50%", paddingLeft: "20px" }}>
       {data.messages
         .slice(0)
-        .reverse()
         .map(({ id, user: messageUser, content, avatar }) => (
           <div
             style={{
