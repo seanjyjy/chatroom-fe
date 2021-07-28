@@ -18,7 +18,7 @@ import "./index.css";
 
 // creating a websocket link connected to the server which is localhost:4000
 const link = new WebSocketLink({
-  uri: "ws://localhost:4000/",
+  uri: "ws://serene-earth-24117.herokuapp.com/",
   options: {
     reconnect: true,
   },
@@ -26,7 +26,7 @@ const link = new WebSocketLink({
 
 const client = new ApolloClient({
   link,
-  uri: "http://localhost:4000/",
+  uri: "http://serene-earth-24117.herokuapp.com/",
   cache: new InMemoryCache(),
 });
 
